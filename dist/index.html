@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+
+        <div id="nav">
+            <h1 class="header__title">Movie Search</h1>
+            <input id="input" type="text" placeholder="Enter movie" id="input"> <button id="btn">search</button>
+        </div><br><br>
+
+        <div id="list"></div>
+        
+    
+    </div>
+
+
+    <script id="first-template" type="text/x-handlebars-template">
+        {{#each movieData}}
+        <div class="movie" data-id="{{imdbID}}">
+            <h3>{{Title}}</h3> 
+            <img class="poster" src="{{Poster}}" alt="" class="poster"> 
+            <h3 class="pYear">year: {{Year}}</h3> 
+            <div class="ratings"></div>   
+        </div>
+        {{/each}}
+    </script>
+
+    <script id="second-template" type="text/x-handlebars-template">
+        <div class="line"></div>
+        <p class="RAT">RATINGS</p>
+        {{#each moviedataById}}
+        <ul>
+            <li>{{Value}}</li>    
+        </ul>
+        {{/each}}
+    </script>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="render.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
